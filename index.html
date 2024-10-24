@@ -33,6 +33,26 @@
             background: #f8f9fa;
             border-radius: 8px;
         }
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            min-height: 100px;
+        }
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -41,9 +61,22 @@
             text-decoration: none;
             border-radius: 4px;
             margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         .btn:hover {
             background: #0056b3;
+        }
+        .contact-options {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -72,8 +105,37 @@
 
     <div class="contact">
         <h2>Get Started</h2>
-        <p>Ready to transform your business with AI? Contact us to discuss your needs.</p>
-        <a href="mailto:your@email.com" class="btn">Contact Us</a>
+        <p>Ready to transform your business with AI? Reach out to discuss your needs.</p>
+        
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xpwzwbyz" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-options">
+            <a href="mailto:your@email.com" class="btn">Email Us</a>
+        </div>
     </div>
 </body>
 </html>
