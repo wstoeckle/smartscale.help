@@ -3,139 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Consulting Services</title>
+    <title>SmartScale - Automate your business</title>
     <style>
+        :root {
+            --purple-primary: #6B46C1;
+            --purple-light: #E9D8FD;
+            --purple-dark: #553C9A;
+            --gray-light: #F7FAFC;
+            --text-primary: #2D3748;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            color: var(--text-primary);
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
-            color: #333;
+            padding: 0 2rem;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
+
+        .hero {
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-dark));
+            color: white;
+            padding: 6rem 0;
+            margin-bottom: 4rem;
         }
-        .services {
-            margin: 2rem 0;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
         }
-        .service {
+
+        .hero p {
+            font-size: 1.25rem;
             margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
+            opacity: 0.9;
+            max-width: 600px;
         }
-        .contact {
-            text-align: center;
-            margin-top: 3rem;
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .service {
+            background: var(--gray-light);
             padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 8px;
+            border-radius: 12px;
+            transition: transform 0.2s;
         }
-        .form-group {
+
+        .service:hover {
+            transform: translateY(-5px);
+        }
+
+        .service h3 {
+            color: var(--purple-primary);
             margin-bottom: 1rem;
-            text-align: left;
+            font-size: 1.5rem;
         }
+
+        .contact {
+            background: var(--gray-light);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
+            color: var(--text-primary);
         }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 0.75rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 6px;
             font-size: 1rem;
+            transition: border-color 0.2s;
         }
-        .form-group textarea {
-            min-height: 100px;
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--purple-primary);
         }
+
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: #007bff;
+            padding: 1rem 2rem;
+            background: var(--purple-primary);
             color: white;
             text-decoration: none;
-            border-radius: 4px;
-            margin-top: 1rem;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
         }
+
         .btn:hover {
-            background: #0056b3;
+            background: var(--purple-dark);
         }
-        .contact-options {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 2rem;
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #4A5568;
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.125rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>AI Consulting Services</h1>
-        <p>Expert guidance for your AI implementation journey</p>
-    </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Your Business<br>with AI Automation</h1>
+            <p>We help small and medium businesses streamline operations and boost efficiency through intelligent automation solutions.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
 
-    <div class="services">
-        <div class="service">
-            <h2>Strategy Development</h2>
-            <p>We help organizations identify and prioritize AI opportunities, develop roadmaps, and create implementation strategies aligned with business objectives.</p>
+    <div class="container">
+        <div class="section-title">
+            <h2>How We Help</h2>
+            <p>Practical AI solutions tailored for your business needs</p>
         </div>
 
-        <div class="service">
-            <h2>Technical Implementation</h2>
-            <p>From proof of concept to production deployment, we guide teams through the technical aspects of AI integration, ensuring best practices and scalability.</p>
-        </div>
+        <div class="services">
+            <div class="service">
+                <h3>Process Automation</h3>
+                <p>Automate repetitive tasks and workflows to free up your team's time for high-value work. From document processing to data entry, we identify and implement the right automation solutions.</p>
+            </div>
 
-        <div class="service">
-            <h2>Training & Support</h2>
-            <p>We provide comprehensive training for teams and ongoing support to ensure successful adoption of AI technologies.</p>
-        </div>
-    </div>
+            <div class="service">
+                <h3>AI Integration</h3>
+                <p>Enhance your existing systems with AI capabilities. We help you leverage machine learning and natural language processing to make your operations smarter and more efficient.</p>
+            </div>
 
-    <div class="contact">
-        <h2>Get Started</h2>
-        <p>Ready to transform your business with AI? Reach out to discuss your needs.</p>
-        
-        <div class="contact-form">
-            <form action="https://formspree.io/f/xpwzwbyz" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-
-        <div class="contact-options">
-            <a href="mailto:your@email.com" class="btn">Email Us</a>
+            <div class="service">
+                <h3>Custom Solutions</h3>
+                <p>Get tailored solutions that address your specific business challenges. We work with you to understand your needs and develop practical, cost-effective solutions.</p>
+            </div>
         </div>
     </div>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Talk</h2>
+                <p>Ready to explore how AI can transform your business?</p>
+            </div>
+
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xpwzwbyz" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us about your needs</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
