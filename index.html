@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartScale</title>
+    <title>SmartScale - AI Automation for Small Business</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/source-code-pro/2.38.0/source-code-pro.min.css">
     <style>
         :root {
             --bg: #FFFFFF;
-            --text: #000000;
+            --text: #1a1a1a;
             --accent: #6B46C1;
             --grid: #E5E5E5;
             --spacing: 32px;
+            --light-purple: #F3F0FF;
         }
         
         * {
@@ -21,12 +22,15 @@
         }
         
         body {
-            font-family: 'Source Code Pro', monospace;
-            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
             color: var(--text);
             background: var(--bg);
             padding: var(--spacing);
-            max-width: 800px;
+        }
+
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -44,40 +48,71 @@
             z-index: -1;
         }
 
-        h1 {
-            font-size: 24px;
-            margin-bottom: calc(var(--spacing) * 2);
-            border-bottom: 2px solid var(--text);
-            padding-bottom: var(--spacing);
+        .hero {
+            text-align: center;
+            margin: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 4);
         }
 
-        section {
+        h1 {
+            font-size: 40px;
+            margin-bottom: var(--spacing);
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto var(--spacing);
+            color: #4A5568;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing);
             margin: calc(var(--spacing) * 2) 0;
         }
 
-        .services {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing);
-        }
-
-        .service {
-            border: 2px solid var(--text);
+        .benefit {
+            background: var(--light-purple);
             padding: var(--spacing);
+            border-radius: 8px;
         }
 
-        .service h2 {
-            font-size: 16px;
-            margin-bottom: var(--spacing);
+        .benefit h3 {
+            font-family: 'Source Code Pro', monospace;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
 
-        .service p {
-            font-size: 14px;
+        .testimonials {
+            margin: calc(var(--spacing) * 2) 0;
+            padding: calc(var(--spacing) * 2) 0;
+            border-top: 1px solid var(--grid);
+            border-bottom: 1px solid var(--grid);
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            font-style: italic;
+            color: #4A5568;
+        }
+
+        .testimonial-author {
+            margin-top: 16px;
+            font-style: normal;
+            font-weight: 600;
         }
 
         form {
-            border: 2px solid var(--text);
+            max-width: 500px;
+            margin: 0 auto;
             padding: var(--spacing);
+            background: white;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
         }
 
         .form-group {
@@ -87,16 +122,15 @@
         label {
             display: block;
             margin-bottom: 8px;
-            font-size: 14px;
+            font-weight: 500;
         }
 
         input, textarea {
             width: 100%;
-            padding: 8px;
-            border: 2px solid var(--text);
-            font-family: 'Source Code Pro', monospace;
-            font-size: 14px;
-            background: transparent;
+            padding: 12px;
+            border: 2px solid var(--grid);
+            border-radius: 4px;
+            font-size: 16px;
         }
 
         input:focus, textarea:focus {
@@ -105,85 +139,123 @@
         }
 
         button {
-            background: var(--text);
-            color: var(--bg);
+            background: var(--accent);
+            color: white;
             border: none;
-            padding: 8px 16px;
-            font-family: 'Source Code Pro', monospace;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
             cursor: pointer;
             transition: opacity 0.2s;
+            font-weight: 500;
+            width: 100%;
         }
 
         button:hover {
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
-        .pixel-arrow {
-            display: inline-block;
-            margin-left: 8px;
-            font-family: monospace;
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing);
+            margin: calc(var(--spacing) * 2) 0;
+            text-align: center;
         }
 
-        @media (min-width: 768px) {
-            .services {
-                grid-template-columns: repeat(2, 1fr);
+        .feature {
+            padding: var(--spacing);
+        }
+
+        .feature-number {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 24px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
     <div class="grid-bg"></div>
-    
-    <h1>SmartScale_<br>AI Automation</h1>
+    <div class="container">
+        <section class="hero">
+            <h1>AI Automation That Makes Sense<br>for Your Business</h1>
+            <p>We help small businesses save time and money by automating repetitive tasks with practical AI solutions.</p>
+        </section>
 
-    <section>
-        <div class="services">
-            <div class="service">
-                <h2>> Process_Automation</h2>
-                <p>Automate repetitive tasks. Free your team for creative work.</p>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-number">Save Time</div>
+                <p>Average time saved on routine tasks</p>
             </div>
-
-            <div class="service">
-                <h2>> AI_Integration</h2>
-                <p>Add intelligence to existing systems. Optimize operations.</p>
+            <div class="feature">
+                <div class="feature-number">Start Fast</div>
+                <p>Typical implementation time of weeks</p>
             </div>
-
-            <div class="service">
-                <h2>> Custom_Solutions</h2>
-                <p>Tailored AI implementations. Solve real problems.</p>
-            </div>
-
-            <div class="service">
-                <h2>> SMB_Focus</h2>
-                <p>Right-sized solutions. Maximum impact.</p>
+            <div class="feature">
+                <div class="feature-number">ROI</div>
+                <p>Focused on your bottom line</p>
             </div>
         </div>
-    </section>
 
-    <section>
-        <form action="https://formspree.io/f/xpwzwbyz" method="POST">
-            <div class="form-group">
-                <label for="name">> Name:</label>
-                <input type="text" id="name" name="name" required>
+        <section class="benefits">
+            <div class="benefit">
+                <h3>> Process Automation</h3>
+                <p>Let AI handle your repetitive tasks like data entry, document processing, and email responses. Your team focuses on what matters most.</p>
             </div>
-            
-            <div class="form-group">
-                <label for="email">> Email:</label>
-                <input type="email" id="email" name="email" required>
+
+            <div class="benefit">
+                <h3>> Cost Effective</h3>
+                <p>Solutions designed for small business budgets. Start saving money from day one with practical automation that pays for itself.</p>
             </div>
-            
-            <div class="form-group">
-                <label for="company">> Company:</label>
-                <input type="text" id="company" name="company">
+
+            <div class="benefit">
+                <h3>> Easy Integration</h3>
+                <p>Works with your existing tools and software. No complex infrastructure or IT expertise needed.</p>
             </div>
-            
-            <div class="form-group">
-                <label for="message">> Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+        </section>
+
+        <!-- <section class="testimonials">
+            <div class="testimonial">
+                "SmartScale helped us automate our invoice processing. What used to take 3 hours now takes 15 minutes. The ROI was clear within the first month."
+                <div class="testimonial-author">— Sarah Chen, Accounting Manager</div>
             </div>
-            
-            <button type="submit">SEND <span class="pixel-arrow">→</span></button>
-        </form>
-    </section>
+        </section> -->
+
+        <section>
+            <form action="https://formspree.io/f/xpwzwbyz" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">What would you like to automate?</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">Get Started</button>
+            </form>
+        </section>
+    </div>
 </body>
 </html>
